@@ -79,4 +79,27 @@ public class BinaryTree {
         System.out.println("The value "+ value+ " is NOT found in the BT.");
         return -1;
     }
+
+    //Delete a node
+    public void delete(int index, String value){
+        for(int i=1; i<=lastUsedIndex; i++){
+            if(arr[i] == value){
+                arr[i] = arr[lastUsedIndex];
+                arr[lastUsedIndex] = null;
+                lastUsedIndex--;
+                System.out.println(value + " is deleted successfully.");
+                return;
+            }
+        }
+        System.out.print(value + " is NOT found in the Tree.");
+    }
+
+    //Delete binary tree
+    public void deleteBT(int index){
+        for(int i=lastUsedIndex; i>=1; i--){
+            arr[lastUsedIndex] = null;
+            lastUsedIndex--;
+        }
+        System.out.println("The tree has deleted successfully.");
+    }
 }

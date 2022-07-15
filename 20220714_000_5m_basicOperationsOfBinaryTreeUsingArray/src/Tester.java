@@ -24,5 +24,13 @@ public class Tester {
         System.out.println();
 
         binaryTree.search("N8");
+
+        binaryTree.delete(1, "N3");
+        binaryTree.levelOrder(1);
+        System.out.println();
+
+        binaryTree.deleteBT(1);
+        binaryTree.levelOrder(1);
+        System.out.println();
     }
 }
