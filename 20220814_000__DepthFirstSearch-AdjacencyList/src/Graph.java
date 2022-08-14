@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Graph {
@@ -34,14 +35,14 @@ public class Graph {
 
     //BFS internal
     private void bfsVisit(GraphNode node){
-        LinkedList<GraphNode> queue = new LinkedList<>();
+        //LinkedList<GraphNode> queue = new LinkedList<>();ok1
+        Queue<GraphNode> queue = new LinkedList<>();
         queue.add(node);
         while(!queue.isEmpty()){
-            GraphNode currentNode = queue.remove(0);
+            //GraphNode currentNode = queue.remove(0);ok2
+            GraphNode currentNode = queue.remove();
             currentNode.isVisited = true;
             System.out.print(currentNode.name + " ");
-            //ArrayList<GraphNode> neighbors = getNeighbors(node); XX
-            //ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
             for(GraphNode neighbor: currentNode.neighbors){
                 if(!neighbor.isVisited){
                     queue.add(neighbor);
