@@ -1,0 +1,8 @@
+public class Tester {
+    public static void main(String[] args){
+        TreeNode root = new TreeNode(-10, new TreeNode(9),
+                new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        Solution solution = new Solution();
+        System.out.println(solution.maxPathSum(root));
+    }
+}
